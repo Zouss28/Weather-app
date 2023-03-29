@@ -1,0 +1,27 @@
+#app{
+    margin: auto;
+    border: 0.1px solid rgba(0, 0, 0, 0.175);
+    border-radius: 10px;
+    width: 420px;
+}
+
+.center, p{
+    margin:15px;
+}
+
+.block { 
+ display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+p{
+    padding-top: 5px;
+    color: #4f4f4f;
+}
+
+strong{
+    color: #262626;
+}
