@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 import requests
 from .credetials import *
+import os
 from geopy.geocoders import Nominatim
 
 # Create your views here.
@@ -19,7 +20,7 @@ class WeatherView(APIView):
         location = geolocator.geocode(loc)
         lat = location.latitude
         long = location.longitude
-        res = requests.get(f'{REACT_APP_API_URL}/weather/?lat={lat}&lon={long}&units=metric&APPID={REACT_APP_API_KEY}').json()
+        res = requests.get(f'{REACT_APP_API_URL}/weather/?lat={lat}&lon={long}&units=metric&APPID={os.environ.get("REACT_APP_API_KEY")}').json()
         icon = res.get('weather')[0].get('icon')
         iUrl = f'{icon}@2x.png'
 
